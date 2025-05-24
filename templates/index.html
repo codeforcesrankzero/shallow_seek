@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShallowSeek</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ShallowSeek</h1>
+            <div class="status">
+                Documents indexed: <span id="docCount">0</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Enter search query...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="upload-container">
+                <input type="file" id="fileInput" multiple accept=".txt,.pdf,.doc,.docx" style="display: none">
+                <button onclick="document.getElementById('fileInput').click()">
+                    Select Files to Upload
+                </button>
+                <div id="uploadProgress" style="display: none">
+                    <div class="progress-text">Uploading files...</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results"></div>
+        </main>
+    </div>
+
+    <div id="loading" style="display: none">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 
